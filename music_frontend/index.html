@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Theory Learning System</title>
+  <meta name="description" content="Music Theory Learning System — manage users, instruments, modules, concepts, exercises and track progress." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════ SIDEBAR ═══════════════════ -->
+  <aside id="sidebar">
+    <div class="sidebar-brand">
+      <h1>🎵 Music Theory<br>Learning System</h1>
+
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section">Overview</div>
+      <div class="nav-item active" data-page="dashboard" onclick="navigate('dashboard')">
+        <span class="icon">🏠</span> Dashboard
+      </div>
+
+      <div class="nav-section">Entities</div>
+      <div class="nav-item" data-page="users" onclick="navigate('users')">
+        <span class="icon">👤</span> Users
+      </div>
+      <div class="nav-item" data-page="instruments" onclick="navigate('instruments')">
+        <span class="icon">🎸</span> Instruments
+      </div>
+      <div class="nav-item" data-page="modules" onclick="navigate('modules')">
+        <span class="icon">📘</span> Course Modules
+      </div>
+      <div class="nav-item" data-page="concepts" onclick="navigate('concepts')">
+        <span class="icon">🧠</span> Theory Concepts
+      </div>
+
+      <div class="nav-section">Practice & Tracking</div>
+      <div class="nav-item" data-page="exercises" onclick="navigate('exercises')">
+        <span class="icon">📝</span> Exercises
+      </div>
+      <div class="nav-item" data-page="progress" onclick="navigate('progress')">
+        <span class="icon">📊</span> Progress
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ═══════════════════ MAIN ═══════════════════ -->
+  <div id="main">
+
+    <!-- TOP BAR -->
+    <header id="topbar">
+      <h2 id="pageTitle">🏠 Dashboard</h2>
+
+      <div class="spacer"></div>
+      <div class="status-dot"></div>
+      <small>localhost:5000</small>
+    </header>
+
+    <!-- PAGE CONTENT (dynamically rendered) -->
+    <main id="content">
+      <div class="loader"><div class="spinner"></div> Loading…</div>
+    </main>
+
+  </div>
+
+  <!-- ═══════════════════ TOAST CONTAINER ═══════════════════ -->
+  <div id="toast-container"></div>
+
+  <!-- ═══════════════════ SCRIPTS ═══════════════════ -->
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

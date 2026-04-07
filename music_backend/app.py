@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import mysql.connector
 
 # Creates Backend server
 app = Flask(__name__)
+CORS(app)  # Allow requests from the HTML/JS frontend
 
 # DATABASE CONNECTION
 db = mysql.connector.connect(
