@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Music Theory Learning System</title>
   <meta name="description" content="Music Theory Learning System — manage users, instruments, modules, concepts, exercises and track progress." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -12,65 +15,69 @@
   <!-- ═══════════════════ SIDEBAR ═══════════════════ -->
   <aside id="sidebar">
     <div class="sidebar-brand">
-      <h1>🎵 Music Theory<br>Learning System</h1>
-
+      <div class="brand-icon">🎵</div>
+      <div>
+        <h1>Music Theory</h1>
+        <p>Learning System</p>
+      </div>
     </div>
 
     <nav class="sidebar-nav">
       <div class="nav-section">Overview</div>
       <div class="nav-item active" data-page="dashboard" onclick="navigate('dashboard')">
-        <span class="icon">🏠</span> Dashboard
+        <span class="icon">🏠</span><span>Dashboard</span>
       </div>
 
       <div class="nav-section">Entities</div>
       <div class="nav-item" data-page="users" onclick="navigate('users')">
-        <span class="icon">👤</span> Users
+        <span class="icon">👤</span><span>Users</span>
       </div>
       <div class="nav-item" data-page="instruments" onclick="navigate('instruments')">
-        <span class="icon">🎸</span> Instruments
+        <span class="icon">🎸</span><span>Instruments</span>
       </div>
       <div class="nav-item" data-page="modules" onclick="navigate('modules')">
-        <span class="icon">📘</span> Course Modules
+        <span class="icon">📘</span><span>Course Modules</span>
       </div>
       <div class="nav-item" data-page="concepts" onclick="navigate('concepts')">
-        <span class="icon">🧠</span> Theory Concepts
+        <span class="icon">🧠</span><span>Theory Concepts</span>
       </div>
 
-      <div class="nav-section">Practice & Tracking</div>
+      <div class="nav-section">Practice &amp; Tracking</div>
       <div class="nav-item" data-page="exercises" onclick="navigate('exercises')">
-        <span class="icon">📝</span> Exercises
+        <span class="icon">📝</span><span>Exercises</span>
       </div>
       <div class="nav-item" data-page="progress" onclick="navigate('progress')">
-        <span class="icon">📊</span> Progress
+        <span class="icon">📊</span><span>Progress</span>
       </div>
     </nav>
+
+    <div class="sidebar-footer">
+      <div class="api-status">
+        <div class="status-dot" id="apiDot"></div>
+        <span id="apiStatus">Connecting…</span>
+      </div>
+    </div>
   </aside>
 
   <!-- ═══════════════════ MAIN ═══════════════════ -->
   <div id="main">
-
-    <!-- TOP BAR -->
     <header id="topbar">
       <h2 id="pageTitle">🏠 Dashboard</h2>
-
       <div class="spacer"></div>
-      <div class="status-dot"></div>
-      <small>localhost:5000</small>
+      <div class="topbar-right">
+        <span class="server-badge">localhost:5000</span>
+      </div>
     </header>
 
-    <!-- PAGE CONTENT (dynamically rendered) -->
     <main id="content">
-      <div class="loader"><div class="spinner"></div> Loading…</div>
+      <div class="loader"><div class="spinner"></div><span>Loading…</span></div>
     </main>
-
   </div>
 
-  <!-- ═══════════════════ TOAST CONTAINER ═══════════════════ -->
+  <!-- ═══════════════════ TOAST ═══════════════════ -->
   <div id="toast-container"></div>
 
-  <!-- ═══════════════════ SCRIPTS ═══════════════════ -->
   <script src="js/api.js"></script>
   <script src="js/app.js"></script>
-
 </body>
 </html>
